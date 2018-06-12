@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyName</string>
+    <string name="send_to">Send With</string>
+</resources>
