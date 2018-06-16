@@ -6,11 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnIm,btnEx;
+    Button btnIm,btnEx,btnSaveMain;
+    EditText txtName,txtSex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +20,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btnIm=(Button) findViewById(R.id.btnMainIm);
         btnEx=(Button) findViewById(R.id.btnMainEx);
+        btnSaveMain=(Button) findViewById(R.id.btnSaveMain);
 
+
+        txtName=(EditText) findViewById(R.id.txtNameMain);
+        txtSex =(EditText)findViewById(R.id.txtSex);
+
+        btnSaveMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),Main2Activity.class);
+                intent.putExtra("TXTNAME",txtName.getText().toString());
+                intent.putExtra("SEX",txtSex.getText().toString());
+                startActivity(intent);
+
+            }
+        });
 
         btnEx.setOnClickListener(new View.OnClickListener() {
             @Override

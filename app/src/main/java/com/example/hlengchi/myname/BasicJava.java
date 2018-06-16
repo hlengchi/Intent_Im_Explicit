@@ -29,6 +29,67 @@ public class BasicJava {
 //          System.out.println("Arrays : "+myNumber[i]);
 //        }
 
+        //--------------------------------------
+//     int passcode=312;
+//     String coffeeType;
+//
+//     switch (passcode){
+//         case 555: coffeeType="Espresso";
+//         break;
+//         case 312: coffeeType="Vanilla latte";
+//         break;
+//         case 269: coffeeType="Drip coffee";
+//         break;
+//         default:coffeeType="Unknown";
+//     }
+//     System.out.println(coffeeType);
+
+        //---create function
+    //chourus(4);
+     //likePhoto(10,"The best photo",true);
+
+       // double totalChange=makeChange(20,50);
+
+        //int totalRandomNumber=rollDice();
+        System.out.println("Roll 1 : "+rollDice(8));
+        System.out.println("Roll 2 : "+rollDice(10));
+
 
     }
+
+    static public void chourus(int temperature){
+        if (temperature>30) {
+            System.out.println("It's hot outside!");
+        }else if(temperature<5){
+            System.out.println("Brr, consider wearing a jacket.");
+        }else {
+            System.out.println("Not too hot, not too cold.");
+        }
+    }
+    static public int likePhoto(int currentLikes, String comment, boolean like){
+        int totalLike;
+        System.out.println("Feedback"+comment);
+        if (like) {
+            currentLikes=currentLikes+1;
+        }
+            //System.out.println("Number of likes: "+ currentLikes);
+        return currentLikes;
+    }
+
+    static public double makeChange(double itemCost, double dollarsProvided){
+        double change=dollarsProvided-itemCost;
+        return change;
+    }
+    static public int rollDice(int sides){
+        //random number between 0 and (almost)1
+        double randomNumber=Math.random();
+        //change rang to 0 to (almost)6
+        randomNumber=randomNumber* sides;
+        //shift rang up one
+        int randonInt=(int) randomNumber+1;
+        return randonInt;
+
+    }
+
 }
+
